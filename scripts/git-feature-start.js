@@ -31,13 +31,13 @@ async function createFeatureBranch() {
       process.exit(1);
     }
 
-    // Ensure we're on develop branch
-    console.log('🔄 Checking out develop branch...');
-    execSync('git checkout develop', { stdio: 'inherit' });
+    // Ensure we're on dev branch
+    console.log('🔄 Checking out dev branch...');
+    execSync('git checkout dev', { stdio: 'inherit' });
 
     // Pull latest changes
     console.log('📥 Pulling latest changes...');
-    execSync('git pull origin develop', { stdio: 'inherit' });
+    execSync('git pull origin dev', { stdio: 'inherit' });
 
     // Create feature branch
     const branchName = `feature/${featureName}`;
@@ -50,7 +50,9 @@ async function createFeatureBranch() {
     console.log('1. Make your changes');
     console.log('2. Commit with conventional format: feat(scope): description');
     console.log('3. Run: npm run git:prepare-pr');
-    console.log('4. Push and create Pull Request');
+    console.log('4. Push: git push origin feature/your-feature-name');
+    console.log('5. Create Pull Request to dev branch');
+    console.log('6. After merge to dev, create PR from dev to main');
 
   } catch (error) {
     console.error('❌ Error creating feature branch:', error.message);

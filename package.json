@@ -47,7 +47,7 @@
     "git:feature-start": "node scripts/git-feature-start.js",
     "git:health-check": "node scripts/git-health-check.js",
     "git:prepare-pr": "npm run test && npm run lint && npm run type-check",
-    "git:cleanup": "git branch --merged | grep -v '\\*\\|main\\|develop' | xargs -n 1 git branch -d"
+    "git:cleanup": "git branch --merged | grep -v '\\*\\|main\\|dev' | xargs -n 1 git branch -d"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.0.0",

@@ -133,12 +133,14 @@ We welcome contributions! Please see our [Contributing Guide](./docs/CONTRIBUTIN
 
 ### Development Workflow
 
+**⚠️ Note: `main` and `dev` branches are protected**
+
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
+2. Create a feature branch from `dev`: `git checkout dev && git checkout -b feature/amazing-feature`
 3. Make your changes and add tests
-4. Commit your changes: `git commit -m 'Add amazing feature'`
-5. Push to the branch: `git push origin feature/amazing-feature`
-6. Open a Pull Request
+4. Commit your changes: `git commit -m 'feat(scope): add amazing feature'`
+5. Push to your feature branch: `git push origin feature/amazing-feature`
+6. Open a Pull Request to the `dev` branch
 
 ## 📖 Documentation
 
@@ -147,6 +149,7 @@ We welcome contributions! Please see our [Contributing Guide](./docs/CONTRIBUTIN
 - [Testing Guide](./docs/testing.md)
 - [Contributing Guide](./docs/CONTRIBUTING.md)
 - [Version Control Guide](./docs/git-best-practices.md)
+- [Branch Protection Setup](./docs/branch-protection.md)
 - [Plugin Development](./docs/plugins.md)
 - [Deployment Guide](./docs/deployment.md)
 - [Project Planning](./docs/project-planning.md)

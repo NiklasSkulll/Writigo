@@ -17,10 +17,13 @@ writigo/
 
 ### Branch Strategy
 
-#### **Main Branches**
-- `main` - Production-ready code, protected branch
-- `develop` - Integration branch for features
+#### **Protected Branches**
+- `main` - Production-ready code, **protected** (no direct pushes)
+- `dev` - Integration branch for features, **protected** (no direct pushes)
+
+#### **Development Branches**
 - `feature/*` - Feature development branches
+- `bugfix/*` - Bug fix branches
 - `hotfix/*` - Critical production fixes
 
 #### **Branch Naming Convention**
@@ -29,6 +32,24 @@ feature/editor-markdown-parser
 feature/ai-embedding-pipeline
 bugfix/file-watcher-memory-leak
 hotfix/security-vulnerability-fix
+```
+
+#### **Writigo Development Workflow**
+```bash
+# 1. Create feature branch from dev
+git checkout dev
+git pull origin dev
+git checkout -b feature/your-feature-name
+
+# 2. Develop and commit
+git add .
+git commit -m "feat(editor): implement new feature"
+
+# 3. Push feature branch
+git push origin feature/your-feature-name
+
+# 4. Create Pull Request: feature/your-feature -> dev
+# 5. After review and merge, create PR: dev -> main
 ```
 
 ### Commit Standards
@@ -87,7 +108,7 @@ coverage/             # Test coverage reports
 # Clone and setup
 git clone https://github.com/yourusername/writigo.git
 cd writigo
-git checkout develop
+git checkout dev
 
 # Create feature branch  
 git checkout -b feature/your-feature-name
@@ -99,20 +120,38 @@ pip install -r requirements.txt
 
 #### **Daily Workflow**
 ```bash
-# Pull latest changes
-git checkout develop
-git pull origin develop
+# Pull latest changes from dev
+git checkout dev
+git pull origin dev
 
-# Sync your branch
+# Sync your feature branch
 git checkout feature/your-feature-name  
-git rebase develop
+git rebase dev
 
 # Make changes and commit
 git add .
 git commit -m "feat(editor): implement new feature"
 
-# Push changes
+# Push feature branch
 git push origin feature/your-feature-name
+
+# Create Pull Request to dev branch
+```
+
+#### **Pull Request Workflow**
+```bash
+# 1. Feature development
+feature/my-feature -> dev (via Pull Request)
+
+# 2. Integration testing on dev branch
+# Run full test suite, integration tests
+
+# 3. Release to production
+dev -> main (via Pull Request)
+
+# 4. Hotfixes (if needed)
+hotfix/critical-fix -> main (via Pull Request)
+hotfix/critical-fix -> dev (to keep branches in sync)
 ```
 
 #### **Before Pull Request**
@@ -156,11 +195,17 @@ Our GitHub Actions automatically:
 - Ensure proper commit message format
 
 #### **Required Status Checks**
-Before merging to `main`:
+Before merging to `dev`:
 - ✅ All tests pass
 - ✅ No security issues detected  
 - ✅ Documentation updated
 - ✅ Code review approved
+
+Before merging to `main`:
+- ✅ All dev branch checks pass
+- ✅ Integration tests on dev successful
+- ✅ Release notes prepared
+- ✅ Stakeholder approval
 
 ### 🛠️ Project Commands
 

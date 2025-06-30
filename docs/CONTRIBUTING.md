@@ -70,11 +70,39 @@ docs(readme): update installation guide
 
 ### Pull Request Process
 
-1. Create a feature branch from `main`
-2. Make your changes with appropriate tests
-3. Update documentation if needed
-4. Ensure all tests pass
-5. Submit a pull request with clear description
+**⚠️ Important: `main` and `dev` branches are protected - no direct pushes allowed**
+
+1. **Create feature branch from `dev`**
+   ```bash
+   git checkout dev
+   git pull origin dev
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Develop with tests**
+   - Make your changes with appropriate tests
+   - Follow coding standards and conventions
+   - Update documentation if needed
+
+3. **Prepare for review**
+   ```bash
+   npm run git:prepare-pr  # Runs tests, linting, type-check
+   git push origin feature/your-feature-name
+   ```
+
+4. **Submit Pull Request to `dev`**
+   - Clear description of changes
+   - Link related issues
+   - Include screenshots/demos if applicable
+
+5. **After merge to `dev`**
+   - Integration testing occurs on `dev` branch
+   - When ready, maintainers create PR from `dev` → `main`
+
+### Branch Protection Rules
+
+- **`main`**: Requires PR from `dev`, all checks must pass, admin approval
+- **`dev`**: Requires PR from feature branches, all checks must pass, code review
 
 ## 🧪 Testing
 
