@@ -1,3 +1,154 @@
-# Global code owner for Writigo
-# All files require review from the repository owner
+# =============================================================================
+# Writigo Code Owners
+# =============================================================================
+# This file defines who is responsible for reviewing code in different parts
+# of the Writigo repository. Code owners are automatically requested for review
+# when someone opens a pull request that modifies files they own.
+
+# Global ownership - fallback for any files not covered by specific rules
 * @NiklasSkull
+
+# =============================================================================
+# Core Project Files
+# =============================================================================
+
+# Repository configuration and project management
+/.github/ @NiklasSkull
+/scripts/ @NiklasSkull
+/docker/ @NiklasSkull
+package.json @NiklasSkull
+*.yml @NiklasSkull
+*.yaml @NiklasSkull
+Dockerfile* @NiklasSkull
+docker-compose* @NiklasSkull
+
+# Git and version control configuration
+.gitignore @NiklasSkull
+.gitattributes @NiklasSkull
+
+# =============================================================================
+# Documentation
+# =============================================================================
+
+# All documentation requires review
+/docs/ @NiklasSkull
+README.md @NiklasSkull
+*.md @NiklasSkull
+
+# Specific documentation areas (can be assigned to teams later)
+/docs/api.md @NiklasSkull
+/docs/architecture.md @NiklasSkull
+/docs/deployment.md @NiklasSkull
+
+# =============================================================================
+# Applications
+# =============================================================================
+
+# Electron Editor (Frontend)
+/apps/editor/ @NiklasSkull
+# TODO: Add frontend team when available
+# /apps/editor/ @frontend-team @NiklasSkull
+
+# Web UI (Frontend)
+/apps/web-ui/ @NiklasSkull
+# TODO: Add frontend team when available
+# /apps/web-ui/ @frontend-team @NiklasSkull
+
+# API Backend
+/apps/api/ @NiklasSkull
+# TODO: Add backend team when available
+# /apps/api/ @backend-team @NiklasSkull
+
+# =============================================================================
+# Services (Backend/Python)
+# =============================================================================
+
+# File Watcher Service
+/services/watcher/ @NiklasSkull
+
+# Document Ingestion Pipeline
+/services/ingestion/ @NiklasSkull
+
+# All Python services
+/services/ @NiklasSkull
+# TODO: Add backend team when available
+# /services/ @backend-team @NiklasSkull
+
+# =============================================================================
+# Shared Packages
+# =============================================================================
+
+# TypeScript types and shared utilities
+/packages/ @NiklasSkull
+/packages/types/ @NiklasSkull
+/packages/shared/ @NiklasSkull
+
+# =============================================================================
+# Configuration Files
+# =============================================================================
+
+# Testing configuration
+jest.config.js @NiklasSkull
+playwright.config.ts @NiklasSkull
+pytest.ini @NiklasSkull
+pyproject.toml @NiklasSkull
+
+# TypeScript configuration
+tsconfig*.json @NiklasSkull
+
+# Linting and formatting
+.eslintrc* @NiklasSkull
+.prettierrc* @NiklasSkull
+.flake8 @NiklasSkull
+
+# Python dependencies and configuration
+requirements*.txt @NiklasSkull
+setup.py @NiklasSkull
+pyproject.toml @NiklasSkull
+
+# Environment and secrets (CRITICAL - always review)
+.env.example @NiklasSkull
+.env* @NiklasSkull
+
+# =============================================================================
+# Special Files
+# =============================================================================
+
+# Security and licensing
+LICENSE @NiklasSkull
+SECURITY.md @NiklasSkull
+
+# Git hooks and automation
+.pre-commit-config.yaml @NiklasSkull
+
+# =============================================================================
+# Future Team Structure (when teams are formed)
+# =============================================================================
+
+# Uncomment and modify these when you have dedicated teams:
+
+# Frontend Team
+# /apps/editor/ @frontend-team @NiklasSkull
+# /apps/web-ui/ @frontend-team @NiklasSkull
+# *.tsx @frontend-team
+# *.jsx @frontend-team
+# *.css @frontend-team
+# *.scss @frontend-team
+
+# Backend Team  
+# /apps/api/ @backend-team @NiklasSkull
+# /services/ @backend-team @NiklasSkull
+# *.py @backend-team
+
+# DevOps Team
+# /.github/workflows/ @devops-team @NiklasSkull
+# /docker/ @devops-team @NiklasSkull
+# /scripts/ @devops-team @NiklasSkull
+
+# Documentation Team
+# /docs/ @docs-team @NiklasSkull
+# *.md @docs-team
+
+# AI/ML Team (for embedding and processing pipeline)
+# /services/ingestion/ @ml-team @backend-team @NiklasSkull
+# /services/watcher/ @ml-team @backend-team @NiklasSkull
