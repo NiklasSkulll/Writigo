@@ -1,0 +1,214 @@
+# =============================================================================
+# Writigo .gitignore - AI-Supported Markdown Documentation System
+# =============================================================================
+
+# Dependencies & Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+package-lock.json
+pnpm-debug.log*
+.pnpm-store
+
+# Python Virtual Environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+conda-meta/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+.envrc
+secrets.json
+config.local.json
+
+# IDE & Editors
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.sublime-workspace
+.sublime-project
+
+# Operating Systems
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs & Runtime Data
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+.grunt
+
+# Testing & Coverage
+coverage/
+.nyc_output
+.coverage
+htmlcov/
+.tox/
+.nox/
+.cache
+pytest_cache/
+.pytest_cache/
+test-results/
+playwright-report/
+playwright/.auth/
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Build Outputs & Distribution
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
+
+# Databases & Storage
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.mdb
+*.accdb
+
+# Vector Databases & AI Models
+*.index
+*.faiss
+*.pkl
+*.pickle
+embeddings/
+models/
+checkpoints/
+*.model
+*.bin
+*.safetensors
+# Additional AI/ML patterns
+*.onnx
+*.tflite
+*.pt
+*.pth
+wandb/
+mlruns/
+.neptune/
+
+# Electron Specific
+.electron/
+electron-builder.yml
+app/
+dist_electron/
+
+# Docker & Container Files
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# Modern Development Tools
+.vite/
+.turbo/
+.rush/
+.nx/
+.storybook-out/
+storybook-static/
+
+# Temporary Files & Caches
+.tmp/
+.temp/
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+.sass-cache/
+.eslintcache
+.stylelintcache
+
+# User Data & Content (Important for Writigo!)
+vaults/
+user-data/
+uploads/
+attachments/
+.writigo/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# TypeScript & JavaScript
+*.tsbuildinfo
+.eslintcache
+
+# Backup Files
+*.bak
+*.backup
+*.orig
+*~
+
+# System Files
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Redis & Cache Files
+dump.rdb
+*.rdb
+
+# Miscellaneous
+.vagrant/
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraformrc
+terraform.rc
